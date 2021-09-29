@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.seckill.mapper.GoodsMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.example.seckill.pojo.Goods">
+        <id column="id" property="id" />
+        <result column="goods_name" property="goodsName" />
+        <result column="goods_title" property="goodsTitle" />
+        <result column="goods_img" property="goodsImg" />
+        <result column="goods_detail" property="goodsDetail" />
+        <result column="goods_prices" property="goodsPrices" />
+        <result column="goods_stock" property="goodsStock" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, goods_name, goods_title, goods_img, goods_detail, goods_prices, goods_stock
+    </sql>
+
+    <select id="getAll" resultType="com.example.seckill.vo.GoodsVO">
+        SELECT
+            g.id,
+            g.goods_name,
+            g.goods_detail,
+            g.goods_img,
+            g.goods_prices,
+            g.goods_stock,
+            g.goods_title,
+            tg.seckill_price,
+            tg.stock,
+            tg.begin_date,
+            tg.end_date
+        from t_goods g INNER JOIN t_seckill_goods as tg on g.id = tg.goods_id;
+    </select>
+
+    <select id="getDetailById" resultType="com.example.seckill.vo.GoodsVO">
+        SELECT
+            g.id,
+            g.goods_name,
+            g.goods_detail,
+            g.goods_img,
+            g.goods_prices,
+            g.goods_stock,
+            g.goods_title,
+            tg.seckill_price,
+            tg.stock,
+            tg.begin_date,
+            tg.end_date
+        from t_goods g INNER JOIN t_seckill_goods as tg on g.id = tg.goods_id
+        where g.id=#{id};
+    </select>
+</mapper>
