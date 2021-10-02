@@ -3,7 +3,6 @@ package com.example.seckill.utils;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.xml.stream.events.StartDocument;
 
 public class CookieUtil {
 
@@ -16,6 +15,9 @@ public class CookieUtil {
 
     public static String getCookieValue(HttpServletRequest request, String cookieName) {
         Cookie[] cookies = request.getCookies();
+        if(cookies == null) {
+            return null;
+        }
         String cookieValue = null;
         for(Cookie cookie : cookies) {
             if(cookie.getName().equals(cookieName)){

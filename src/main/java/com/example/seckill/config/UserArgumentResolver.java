@@ -40,7 +40,7 @@ public class UserArgumentResolver implements HandlerMethodArgumentResolver {
         if (StringUtils.isEmpty(ticket)) {
             return null;
         }
-        log.info("I am resolving parameter!");
+//        log.info("Resolving parameter!");
         return userService.getUserByTicket(ticket, request, response);
     }
 }

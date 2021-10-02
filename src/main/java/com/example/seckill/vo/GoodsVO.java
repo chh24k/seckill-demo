@@ -13,7 +13,7 @@ import java.util.Date;
 @NoArgsConstructor
 public class GoodsVO extends Goods {
 
-    private BigDecimal seckillPrice;
+    private BigDecimal secKillPrice;
     private Integer stock;
     private Date beginDate;
     private Date endDate;

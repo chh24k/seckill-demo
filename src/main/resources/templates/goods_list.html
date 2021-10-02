@@ -24,7 +24,7 @@
     <div class="panel-heading">秒杀商品列表11</div>
     <div class="panel-heading">
         <button onclick="messageRegister()">消息中心</button>
-        <input id="userid" th:value="${user.id}"></input>
+        <input id="userid" th:value="${user?.id}" ></input>
     </div>
     　　
     <table class="table" id="goodslist">
@@ -40,12 +40,13 @@
             <td th:text="${goods.goodsName}"></td>
             <td><img th:src="@{${goods.goodsImg}}" width="100" height="100"/></td>
             <td th:text="${goods.goodsPrices}"></td>
-            <td th:text="${goods.seckillPrice}"></td>
+            <td th:text="${goods.getSecKillPrice}"></td>
             <td th:text="${goods.stock}"></td>
             　　　　　
 <!--            <td><a th:href="'/goods_detail.htm?goodsId='+${goods.id}">详情</a></td>-->
-            <td><a th:href="'/goods/toDetail/'+${goods?.id}">详情</a></td>
+<!--            <td><a th:href="'/goods/toDetail/'+${goods?.id}">详情</a></td>-->
             　　
+            <td><a th:href="'/my_goodsDetail.htm?goodsId='+${goods.id}">详情</a></td>
         </tr>
     </table>
 </div>
@@ -56,6 +57,5 @@
         var userid = $("#userid").val();
         window.location.href = '/message/list?userid=' + userid;
     }
-
 </script>
 </html>

@@ -20,7 +20,6 @@ import java.net.http.HttpResponse;
 
 @Controller
 @RequestMapping("/login")
-@Slf4j
 public class LoginController {
 
     @Autowired
