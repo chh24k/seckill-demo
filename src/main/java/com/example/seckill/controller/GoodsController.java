@@ -88,11 +88,6 @@ public class GoodsController {
     @RequestMapping("/toDetail/{id}")
     @ResponseBody
     public RespBean toDetail(User user, @PathVariable("id") Long goodsId) {
-//        if(user == null) {
-//            return "l"
-//        }
-//        log.info(user.toString());
-//        model.addAttribute("user", user);
         log.info("toDetail");
         GoodsVO gvo = goodsService.getDetailById(goodsId);
         Date beginDate = gvo.getBeginDate();

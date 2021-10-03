@@ -13,4 +13,9 @@ import com.example.seckill.pojo.SeckillGoods;
  */
 public interface ISeckillGoodsService extends IService<SeckillGoods> {
 
+    boolean pathIsTrue(Long userId, Long goodsId, String path);
+
+    String createPath(Long id, Long goodsId);
+
+    boolean checkCaptcha(Long id, Long goodsId, String captcha);
 }

@@ -96,7 +96,7 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
 
 
     /**
-     * 在service层应该去操作数据库了 不应该再去缓存中取库存了
+     * 在service层应该去操作数据库了 不应该再去缓存中取库存了?
      *
      * @Override
      * @Transactional public void doSecKill(User user, Long goodsId) {
