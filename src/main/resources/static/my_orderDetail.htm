@@ -42,12 +42,6 @@
             <td>订单状态</td>
             <td>
                 <span id="orderStatus"></span>
-                <!--        	<span if="${orderInfo.orderStatus eq 0}">未支付</span>-->
-                <!--        	<span if="${orderInfo.orderStatus eq 1}">待发货</span>-->
-                <!--        	<span if="${orderInfo.orderStatus eq 2}">已发货</span>-->
-                <!--        	<span if="${orderInfo.orderStatus eq 3}">已收货</span>-->
-                <!--        	<span if="${orderInfo.orderStatus eq 4}">已退款</span>-->
-                <!--        	<span if="${orderInfo.orderStatus eq 5}">已完成</span>-->
             </td>
             <td>
                 <button class="btn btn-primary btn-block" type="submit" id="payButton">立即支付</button>
@@ -55,7 +49,7 @@
         </tr>
         <tr>
             <td>收货人</td>
-            <td colspan="2">XXX 18812341234</td>
+            <td colspan="2">XXX <span id="userPhone"></span></td>
         </tr>
         <tr>
             <td>收货地址</td>
@@ -71,6 +65,7 @@
 
     function getOrder() {
         var orderId = g_getQueryString("orderId");
+        console.log(orderId);
         $.ajax({
             url: "/order/getOrder/" + orderId,
             method: "GET",
@@ -117,6 +112,7 @@
                 break;
         }
         $("#orderStatus").text(status);
+        $("#userPhone").text(order.userId);
     }
 
 </script>

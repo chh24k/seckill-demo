@@ -8,10 +8,12 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 @RestControllerAdvice
+@Slf4j
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(Exception.class)
     public RespBean ExceptionHandle(Exception ex) {
+        log.info("Exception:" + ex.toString());
 
         if (ex instanceof GlobalException) {
             GlobalException e = (GlobalException) ex;

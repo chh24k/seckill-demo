@@ -1,6 +1,7 @@
 package com.example.seckill.controller;
 
 
+import com.example.seckill.pojo.SeckillMessage;
 import com.example.seckill.pojo.User;
 import com.example.seckill.rabbitmq.MQSender;
 import com.example.seckill.vo.RespBean;
@@ -36,11 +37,10 @@ public class UserController {
         return RespBean.success(user);
     }
 
-//    @RequestMapping("/mq")
-//    @ResponseBody
-//    public RespBean mq(User user) {
-//        mqSender.send("hello world!");
-//        return RespBean.success(new User());
-//    }
-
+    @RequestMapping("/mq")
+    @ResponseBody
+    public RespBean mq(User user) {
+        mqSender.send("good");
+        return RespBean.success(user);
+    }
 }
