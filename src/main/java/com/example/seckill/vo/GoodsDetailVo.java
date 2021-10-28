@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class GoodsDetailVo {
-
+//    @TODO: Define GoodsDetailVo
     private GoodsVO goods;
     private User user;
     private Long remainSeconds;

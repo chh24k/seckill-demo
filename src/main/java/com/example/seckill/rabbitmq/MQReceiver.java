@@ -18,6 +18,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @Slf4j
+//
 public class MQReceiver {
 
     @Autowired
@@ -30,7 +31,7 @@ public class MQReceiver {
     private RedisTemplate redisTemplate;
 
     @RabbitListener(queues = "seckillQueue")
-    public void recieve(String msg) {
+    public void receive(String msg) {
 
         //此处仍要判断是否有库存
         log.info("Receive:" + msg);

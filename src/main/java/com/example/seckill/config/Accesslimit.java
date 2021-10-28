@@ -1,7 +1,6 @@
 package com.example.seckill.config;
 
 
-import org.springframework.context.annotation.Scope;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
